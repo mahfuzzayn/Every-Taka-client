@@ -22,9 +22,8 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import Image, { StaticImageData } from "next/image";
 import logoImg from "@/assets/images/logo.png";
-import Link from "next/link";
+import { Link } from "react-router";
 
 interface MenuItem {
     title: string;
@@ -37,7 +36,7 @@ interface MenuItem {
 interface NavbarProps {
     logo?: {
         url: string;
-        src: StaticImageData;
+        src: string;
         alt: string;
         title: string;
     };
@@ -150,11 +149,8 @@ const Navbar = ({
                 <nav className="hidden justify-between lg:flex">
                     <div className="flex items-center gap-6">
                         {/* Logo */}
-                        <Link
-                            href={logo.url}
-                            className="flex items-center gap-2"
-                        >
-                            <Image
+                        <Link to={logo.url} className="flex items-center gap-2">
+                            <img
                                 src={logo.src}
                                 className="w-full max-w-[168px] dark:invert"
                                 alt={logo.alt}
@@ -175,12 +171,10 @@ const Navbar = ({
                     </div>
                     <div className="flex items-center gap-2">
                         <Button asChild variant="outline" size="sm">
-                            <Link href={auth.login.url}>
-                                {auth.login.title}
-                            </Link>
+                            <Link to={auth.login.url}>{auth.login.title}</Link>
                         </Button>
                         <Button asChild size="sm">
-                            <Link href={auth.signup.url}>
+                            <Link to={auth.signup.url}>
                                 {auth.signup.title}
                             </Link>
                         </Button>
@@ -191,11 +185,8 @@ const Navbar = ({
                 <div className="block lg:hidden">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
-                        <Link
-                            href={logo.url}
-                            className="flex items-center gap-2"
-                        >
-                            <Image
+                        <Link to={logo.url} className="flex items-center gap-2">
+                            <img
                                 src={logo.src}
                                 className="w-full max-w-[168px] dark:invert"
                                 alt={logo.alt}
@@ -213,10 +204,10 @@ const Navbar = ({
                                 <SheetHeader>
                                     <SheetTitle>
                                         <Link
-                                            href={logo.url}
+                                            to={logo.url}
                                             className="flex items-center gap-2"
                                         >
-                                            <Image
+                                            <img
                                                 src={logo.src}
                                                 className="w-full max-w-[168px] dark:invert"
                                                 alt={logo.alt}
@@ -239,12 +230,12 @@ const Navbar = ({
 
                                     <div className="flex flex-col gap-3">
                                         <Button asChild variant="outline">
-                                            <Link href={auth.login.url}>
+                                            <Link to={auth.login.url}>
                                                 {auth.login.title}
                                             </Link>
                                         </Button>
                                         <Button asChild>
-                                            <Link href={auth.signup.url}>
+                                            <Link to={auth.signup.url}>
                                                 {auth.signup.title}
                                             </Link>
                                         </Button>
@@ -312,11 +303,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
     }
 
     return (
-        <Link
-            key={item.title}
-            href={item.url}
-            className="text-md font-semibold"
-        >
+        <Link key={item.title} to={item.url} className="text-md font-semibold">
             {item.title}
         </Link>
     );
@@ -326,7 +313,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
     return (
         <Link
             className="hover:bg-muted hover:text-accent-foreground flex select-none flex-row gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors"
-            href={item.url}
+            to={item.url}
         >
             <div className="text-foreground">{item.icon}</div>
             <div>
