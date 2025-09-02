@@ -4,7 +4,7 @@ import {  RouterProvider } from "react-router";
 import "./index.css";
 import router from "./routes/Router";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("every-taka-root")!).render(
     <StrictMode>
         <RouterProvider router={router} />
     </StrictMode>

@@ -1,11 +1,13 @@
 import Navbar from "@/components/shared/Navbar";
-import Hero from "./components/modules/home/Hero";
+import { Outlet } from "react-router";
+import Footer from "./components/shared/Footer";
 
 const App = () => {
     return (
         <>
             <Navbar />
-            <Hero />
+            <Outlet />
+            <Footer />
         </>
     );
 };

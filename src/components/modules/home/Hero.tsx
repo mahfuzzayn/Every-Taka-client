@@ -2,6 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import heroBannerImg from "@/assets/images/hero-banner-2.png";
 
 interface HeroProps {
     badge?: string;
@@ -24,27 +25,27 @@ interface HeroProps {
 }
 
 const Hero = ({
-    badge = "✨ Your Website Builder",
-    heading = "Blocks Built With Shadcn & Tailwind",
-    description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+    badge = "Budget easy. Live easy.",
+    heading = "Track Every Taka, Build Better Habits",
+    description = "Easily manage your expenses, set budgets, and grow your savings — all in one place.",
     buttons = {
         primary: {
-            text: "Discover all components",
-            url: "https://www.shadcnblocks.com",
+            text: "Start Tracking",
+            url: "/sigin",
         },
         secondary: {
-            text: "View on GitHub",
-            url: "https://www.shadcnblocks.com",
+            text: "Learn More",
+            url: "/features",
         },
     },
     image = {
-        src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-        alt: "Hero section demo image showing interface components",
+        src: heroBannerImg,
+        alt: "Hero section image showing happy persons after using Every Taka",
     },
 }: HeroProps) => {
     return (
-        <section className="py-32">
-            <div className="container">
+        <section className="py-32 px-6">
+            <div className="container mx-auto">
                 <div className="grid items-center gap-8 lg:grid-cols-2">
                     <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
                         {badge && (
