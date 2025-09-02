@@ -30,53 +30,50 @@ const Footer = ({
         src: logoImg,
         alt: "Every Taka Logo",
         title: "Every Taka",
-        url: "https://www.shadcnblocks.com",
+        url: "/",
     },
     tagline = "Budget easy. Live easy.",
     menuItems = [
         {
             title: "Product",
             links: [
-                { text: "Overview", url: "#" },
-                { text: "Pricing", url: "#" },
-                { text: "Marketplace", url: "#" },
-                { text: "Features", url: "#" },
-                { text: "Integrations", url: "#" },
-                { text: "Pricing", url: "#" },
+                { text: "Overview", url: "/" },
+                { text: "Pricing", url: "#pricing" },
+                { text: "Features", url: "/features" },
             ],
         },
         {
             title: "Company",
             links: [
-                { text: "About", url: "#" },
-                { text: "Team", url: "#" },
-                { text: "Blog", url: "#" },
-                { text: "Careers", url: "#" },
-                { text: "Contact", url: "#" },
-                { text: "Privacy", url: "#" },
+                { text: "About", url: "/about" },
+                { text: "Contact", url: "/contact" },
+                { text: "Privacy", url: "/privacy-policy" },
             ],
         },
         {
             title: "Resources",
             links: [
-                { text: "Help", url: "#" },
-                { text: "Sales", url: "#" },
-                { text: "Advertise", url: "#" },
+                { text: "Help", url: "/contact" },
+                { text: "Sales", url: "/sales" },
+                { text: "Advertise", url: "/advertise" },
             ],
         },
         {
-            title: "Social",
+            title: "Socials",
             links: [
-                { text: "Twitter", url: "#" },
-                { text: "Instagram", url: "#" },
-                { text: "LinkedIn", url: "#" },
+                { text: "Twitter", url: "https://x.com/mahfuzzzayn" },
+                { text: "Instagram", url: "https://instagram.com/mahfuzzzayn" },
+                {
+                    text: "LinkedIn",
+                    url: "https://linkedin.com/in/mahfuzzayn",
+                },
             ],
         },
     ],
-    copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
+    copyright = "© 2025 Everytaka.verecl.com. All rights reserved.",
     bottomLinks = [
-        { text: "Terms and Conditions", url: "#" },
-        { text: "Privacy Policy", url: "#" },
+        { text: "Terms and Conditions", url: "/terms-and-conditions" },
+        { text: "Privacy Policy", url: "/privacy-policy" },
     ],
 }: FooterProps) => {
     return (
@@ -109,7 +106,9 @@ const Footer = ({
                                             key={linkIdx}
                                             className="hover:text-primary font-medium"
                                         >
-                                            <a href={link.url}>{link.text}</a>
+                                            <Link to={link.url} target="_blank">
+                                                {link.text}
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -124,7 +123,7 @@ const Footer = ({
                                     key={linkIdx}
                                     className="hover:text-primary underline"
                                 >
-                                    <a href={link.url}>{link.text}</a>
+                                    <Link to={link.url}>{link.text}</Link>
                                 </li>
                             ))}
                         </ul>
