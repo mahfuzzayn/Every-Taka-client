@@ -70,7 +70,7 @@ const Footer = ({
             ],
         },
     ],
-    copyright = "© 2025 Everytaka.verecl.com. All rights reserved.",
+    copyright = "© 2025 Everytaka.vercel.app. All rights reserved.",
     bottomLinks = [
         { text: "Terms and Conditions", url: "/terms-and-conditions" },
         { text: "Privacy Policy", url: "/privacy-policy" },

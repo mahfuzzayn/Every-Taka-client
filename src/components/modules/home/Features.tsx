@@ -63,7 +63,7 @@ const Features = ({
         <section className="py-32 px-6">
             <div className="container flex flex-col gap-16 lg:px-16 mx-auto">
                 <div className="lg:max-w-sm">
-                    <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
+                    <h2 className="mb-3 text-xl text-primary font-semibold md:mb-4 md:text-4xl lg:mb-6">
                         {heading}
                     </h2>
                     <p className="text-muted-foreground mb-8 lg:text-lg">
